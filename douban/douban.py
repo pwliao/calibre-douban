@@ -49,7 +49,7 @@ class Douban(Source):
 
     name = 'Douban Books'
     author = 'Li Fanxi, xcffl, jnozsc'
-    version = (3, 1, 0)
+    version = (3, 1, 1)
     minimum_calibre_version = (2, 80, 0)
 
     description = _(
@@ -194,8 +194,6 @@ class Douban(Source):
                 q += ((' ' if q != '' else '') + build_term('author', author_tokens))
             t = 'search'
         q = q.strip()
-        if isinstance(q, type(u'')):
-            q = q.encode('utf-8')
         if not q:
             return None
         url = None
